@@ -1,0 +1,8 @@
+plugins {
+    id "java"
+}
+
+allprojects {
+    group = "io.github.alyemgul.passwordanalyzer"
+    version = "1.0.0"
+}

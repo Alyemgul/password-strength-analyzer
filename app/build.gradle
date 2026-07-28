@@ -1,0 +1,30 @@
+plugins {
+    id "application"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation project(":service")
+
+    implementation libs.jcommander
+    implementation libs.slf4j.api
+    runtimeOnly libs.slf4j.simple
+
+    testImplementation libs.junit.jupiter.api
+    testRuntimeOnly libs.junit.jupiter.engine
+    testRuntimeOnly libs.junit.platform.launcher
+}
+
+application {
+    mainClass = "io.github.alyemgul.passwordanalyzer.app.Main"
+}
+
+test {
+    useJUnitPlatform()
+}
