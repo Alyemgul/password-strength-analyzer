@@ -41,13 +41,13 @@ jobs:
         if: runner.os != 'Windows'
         run: chmod +x gradlew
 
-      - name: Build on Linux or macOS
+      - name: Build and generate coverage on Linux or macOS
         if: runner.os != 'Windows'
-        run: ./gradlew clean build
+        run: ./gradlew clean build jacocoTestReport
 
-      - name: Build on Windows
+      - name: Build and generate coverage on Windows
         if: runner.os == 'Windows'
-        run: .\gradlew.bat clean build
+        run: .\gradlew.bat clean build jacocoTestReport
 
       - name: Upload test reports
         if: always()
@@ -56,6 +56,15 @@ jobs:
           name: test-reports-${{ matrix.os }}
           path: |
             **/build/reports/tests/
+          if-no-files-found: ignore
+
+      - name: Upload JaCoCo coverage reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-reports-${{ matrix.os }}
+          path: |
+            **/build/reports/jacoco/
           if-no-files-found: ignore
 
       - name: Upload application distribution
