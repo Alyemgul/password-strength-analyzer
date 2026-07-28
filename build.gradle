@@ -1,8 +1,23 @@
 plugins {
-    id "java"
+    id "jacoco-report-aggregation"
 }
 
 allprojects {
     group = "io.github.alyemgul.passwordanalyzer"
     version = "1.0.0"
+}
+
+dependencies {
+    jacocoAggregation project(":app")
+    jacocoAggregation project(":core")
+    jacocoAggregation project(":dictionary")
+    jacocoAggregation project(":service")
+}
+
+reporting {
+    reports {
+        testCodeCoverageReport(JacocoCoverageReport) {
+            testSuiteName = "test"
+        }
+    }
 }

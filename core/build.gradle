@@ -1,5 +1,6 @@
 plugins {
     id "java-library"
+    id "jacoco"
 }
 
 java {
@@ -16,4 +17,15 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        html.required = true
+        xml.required = true
+        csv.required = false
+    }
 }
