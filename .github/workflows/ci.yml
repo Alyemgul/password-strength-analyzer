@@ -37,6 +37,10 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Make Gradle wrapper executable
+        if: runner.os != 'Windows'
+        run: chmod +x gradlew
+
       - name: Build on Linux or macOS
         if: runner.os != 'Windows'
         run: ./gradlew clean build
@@ -88,6 +92,10 @@ jobs:
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
+
+      - name: Make Gradle wrapper executable
+        if: runner.os != 'Windows'
+        run: chmod +x gradlew
 
       - name: Install application on Linux or macOS
         if: runner.os != 'Windows'
