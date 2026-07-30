@@ -51,7 +51,7 @@ jobs:
 
       - name: Upload test reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-reports-${{ matrix.os }}
           path: |
@@ -60,7 +60,7 @@ jobs:
 
       - name: Upload JaCoCo coverage reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: jacoco-reports-${{ matrix.os }}
           path: |
@@ -69,7 +69,7 @@ jobs:
 
       - name: Upload SpotBugs reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: spotbugs-reports-${{ matrix.os }}
           path: |
@@ -78,7 +78,7 @@ jobs:
 
       - name: Upload application distribution
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: password-strength-analyzer
           path: |
