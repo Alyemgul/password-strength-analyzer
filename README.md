@@ -93,7 +93,11 @@ Runs only after the build stage succeeds (`needs: build`).
 - PowerShell
 
 ---
+## Maintenance
 
+Dependabot checks Gradle dependencies and GitHub Actions weekly and opens automated update pull requests when newer versions are available.
+
+---
 ## Testing
 
 ```bash
