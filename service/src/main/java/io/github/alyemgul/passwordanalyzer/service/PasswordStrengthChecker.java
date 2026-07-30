@@ -20,7 +20,7 @@ public class PasswordStrengthChecker {
     private final List<Rule> rules;
 
     public PasswordStrengthChecker(List<Rule> rules) {
-        this.rules = rules;
+    this.rules = List.copyOf(rules);
     }
 
     public Strength evaluate(Password password) {

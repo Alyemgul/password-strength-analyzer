@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Dictionary {
+public final class Dictionary {
     private static final Logger logger = LoggerFactory.getLogger(Dictionary.class);
     private final Set<String> weakPasswords = new HashSet<>();
 

@@ -1,6 +1,9 @@
 plugins {
     id "jacoco-report-aggregation"
 }
+plugins {
+    id "com.github.spotbugs" version "6.5.9" apply false
+}
 
 allprojects {
     group = "io.github.alyemgul.passwordanalyzer"
