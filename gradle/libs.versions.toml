@@ -1,7 +1,7 @@
 [versions]
 junit = "5.12.2"
 junitPlatform = "1.13.4"
-mockito = "5.11.0"
+mockito = "5.23.0"
 slf4j = "2.0.12"
 jcommander = "1.82"
 
